@@ -1,0 +1,43 @@
+.storybook-search {
+  height: 50px;
+  max-height: 100%;
+  width: 300px;
+  border: 1px solid #dedede;
+  border-radius: 40px;
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.storybook-search img {
+  height: 32px;
+  filter: invert(30%) sepia(10%) saturate(1000%) hue-rotate(44deg) brightness(90%) contrast(110%);
+}
+
+.storybook-search input {
+  margin: 0 12px;
+  width: 220px;
+  font-size: 18px;
+  border: none;
+}
+
+.storybook-search  input:focus{
+  outline: none;
+}
+
+.storybook-search .closeBtn {
+  opacity: 1;
+  margin-right: 12px;
+}
+
+.storybook-search .closeBtn.closeBtn--hidden {
+  opacity: 0;
+}
+
+.storybook-search .closeBtn:hover {
+  cursor: pointer;
+}
+
+.storybook-search .closeBtn img {
+  height: 15px;
+}

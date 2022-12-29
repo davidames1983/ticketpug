@@ -1,7 +1,14 @@
 .App {
   text-align: center;
   font-family: 'Helvetica';
+  color: #202537;
 }
+
+.App-message {
+  margin-top: 15px;
+}
+
+
 
 .App-logo {
   height: 15vmin;
@@ -19,13 +26,14 @@
   flex-direction: row;
   align-items: center;
   font-size: calc(10px + 2vmin);
-  color: white;
   width: 100%;
   position: fixed;
   padding: 15px;
+  padding-top: 30px;
   padding-left: 30px;
-  top: 0px;
+  top: 25px;
   left: 0px;
+  background: transparent;
 }
 
 .App-link {
@@ -42,5 +50,4 @@
 .App-title {
   font-size: 21px;
   margin-left: 10px;
-  color: #202537;
 }
