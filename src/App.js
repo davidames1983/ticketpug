@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="App">
       <div className="App-message">
-        Worldest best place to find tickets to pug-related events
+        Find great pug-related events (only in NY at the moment)
       </div>
       <header className="App-header">
         <div className="App-logoWrapper">

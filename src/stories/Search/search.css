@@ -5,6 +5,7 @@
   border: 1px solid #dedede;
   border-radius: 40px;
   display: flex;
+  position: relative;
   align-items: center;
   padding: 0 12px;
 }
@@ -40,4 +41,14 @@
 
 .storybook-search .closeBtn img {
   height: 15px;
+}
+
+.storybook-searchResults {
+  width: 270px;
+  height: auto;
+  min-height: 100px;
+  border: 1px solid #dedede;
+  position: absolute;
+  top: 50px;
+  left: 25px;
 }

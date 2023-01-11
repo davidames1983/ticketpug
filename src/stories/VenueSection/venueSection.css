@@ -1,0 +1,40 @@
+.VenueSection svg {
+    width: 300px;
+    height: 258px;
+    position: relative;
+    z-index: 99;
+}
+
+.VenueSection svg g {
+    fill: #df80ff;
+    stroke: #9881db;
+    fill-opacity: 0.2;
+}
+
+.VenueSection.VenueSection--disabled svg g {
+    fill: #ffffff;
+    stroke: #707070;
+}
+
+.VenueSection.VenueSection--selected svg g {
+    fill: #2ffff8;
+    stroke: #777777;
+}
+
+.VenueSection svg g:hover {
+    fill: #2ffff8;
+    stroke: #69cee1;
+    cursor: pointer;
+}
+
+.VenueSection.VenueSection--disabled svg g:hover {
+    fill: #ffffff;
+    stroke: #707070;
+}
+
+.VenueSection-label {
+    position: absolute;
+    font-family: 'Helvetica';
+    font-size: 33px;
+    z-index: 9;
+}
