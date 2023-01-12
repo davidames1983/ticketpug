@@ -13,6 +13,20 @@ g.VenueSection.Section2 {
 g.VenueSection.Section2 text {
     transform: scale(16, -16) translate(280px, -440px);
 }
+
+g.VenueSection.Section3 {
+    transform: scale(.042, -.042) translate(18300px, -71670px);
+}
+g.VenueSection.Section3 text {
+    transform: scale(16, -16) translate(112px, -442px);
+}
+
+g.VenueSection.Section4 {
+    transform: scale(.07, -.07) translate(14000px, -42800px);
+}
+g.VenueSection.Section4 text {
+    transform: scale(10, -10) translate(330px, -400px);
+}
 /* end section specific classes */
 
 

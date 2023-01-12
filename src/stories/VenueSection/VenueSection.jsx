@@ -26,7 +26,7 @@ export const VenueSection = ({
             className={`VenueSection ${sectionClassName} ${available ? '' : 'VenueSection--disabled'} ${isSelected ? 'VenueSection--selected' : ''}`}
         >
             {props.children}
-            <text stroke-width="10" font-size={labelSize} x={labelX} y={labelY}>{label}</text>
+            <text stroke-width="8" font-size={labelSize} x={labelX} y={labelY}>{label}</text>
         </g>
     );
 };

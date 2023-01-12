@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { VenueSection } from '../VenueSection/VenueSection';
 import { ReactComponent as Section1 } from '../assets/sectionImages/section-1.svg';
 import { ReactComponent as Section2 } from '../assets/sectionImages/section-2.svg';
+import { ReactComponent as Section3 } from '../assets/sectionImages/section-3.svg';
+import { ReactComponent as Section4 } from '../assets/sectionImages/section-4.svg';
 import './venue.css';
 
 export const Venue = ({ venueName, ...props }) => {
@@ -11,22 +13,10 @@ export const Venue = ({ venueName, ...props }) => {
         <div className="Venue"> 
             <h3>{props.venueName}</h3>
             <svg className="Venue-Wrapper" viewBox="0 0 2000 4000">
-                <VenueSection
-                    available={true}
-                    selected={false}
-                    label="1"
-                    sectionClassName="Section1"
-                >
-                    <Section1/>
-                </VenueSection>
-                <VenueSection
-                    available={true}
-                    selected={false}
-                    label="2"
-                    sectionClassName="Section2"
-                >
-                    <Section2/>
-                </VenueSection>
+                <VenueSection available={true} selected={false} label="1" sectionClassName="Section1"><Section1/></VenueSection>
+                <VenueSection available={true} selected={false} label="2" sectionClassName="Section2"><Section2/></VenueSection>
+                <VenueSection available={true} selected={false} label="3" sectionClassName="Section3"><Section3/></VenueSection>
+                <VenueSection available={true} selected={false} label="4" sectionClassName="Section4"><Section4/></VenueSection>
             </svg>
         </div>
     );
