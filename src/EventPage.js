@@ -4,12 +4,25 @@ import Venue from './stories/Venue/Venue';
 import EVENTS from './data.js';
 import { Slider, Switch } from 'antd';
 import logo from './logo.png';
+import olypics from './pug-olympics.png';
+import race from './pug-race.png';
+import song from './pug-song.png';
 import './EventPage.css';
+
+const IMAGES = [race, song, olypics];
 
 function EventPage() {
     const { id } = useParams();
-    const event = EVENTS[id - 1];
+    const index = id - 1;
+    const event = EVENTS[index];
+    const image = IMAGES[index];
+
+    let date = new Date(event.date);
+    const eventDate = date.toDateString();
+
     const [disabled, setDisabled] = useState(false);
+
+    console.log("event:", event);
 
     if (!id || !event) {
         return (
@@ -32,6 +45,14 @@ function EventPage() {
                 <a className="EventPage-logoLink" href="/">
                     <img src={logo} className="EventPage-logo" alt="logo" />
                 </a>
+                <div className="EventPage-headerDetails">
+                    <img src={image} alt="logo" />
+                    <div style={{ display: "flex", flexDirection: "column", marginLeft: "20px" }}>
+                        <div style={{ fontSize: "17px", fontWeight: 700, marginBottom: "7px", marginTop: "10px" }}>{event.name}</div>
+                        <div style={{ fontSize: "12px" }}>{eventDate} at {event.time}</div>
+                        <div style={{ fontSize: "12px" }}>{event.venue} in {event.city}, {event.state}</div>
+                    </div>
+                </div>
             </div>
             <div className="EventPage-container">
                 <div className="EventPage-results">

@@ -2,6 +2,7 @@
     text-align: center;
     font-family: 'Helvetica';
     color: #202537;
+    min-width: 1200px;
 }
 
 .Home-message {
@@ -12,8 +13,8 @@
     width: 30px;
 }
 
-.Home-cartIcon--hasItems {
-
+a.Home-detailsLink, a.Home-detailsLink:hover {
+    text-decoration: none;
 }
 
 .Home-eventImg {

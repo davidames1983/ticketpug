@@ -1,5 +1,6 @@
 .EventPage {
     height: 100vh;
+    min-width: 1200px;
 }
 
 .EventPage-container {
@@ -14,6 +15,7 @@
 .EventPage .EventPage-header {
     height: 100px;
     width: 100vw;
+    min-width: 1200px;
     z-index: 999;
     position: fixed;
     display: flex;
@@ -26,6 +28,7 @@
 
 .EventPage-results {
     width: 30vw;
+    min-width: calc(.3 * 1200px);
     height: calc(100vh - 90px);
     -webkit-box-shadow: 0px 14px 13px -4px rgba(0,0,0,0.26);
     -moz-box-shadow: 0px 14px 13px -4px rgba(0,0,0,0.26);
@@ -73,6 +76,7 @@
 
 .EventPage-venueMap {
     width: 45vw;
+    min-width: calc(.45 * 1200px);
     margin-top: -100px;
     padding-left: 50px;
     overflow: scroll;
@@ -80,6 +84,7 @@
 
 .EventPage-filter {
     width: 25vw;
+    min-width: calc(.25 * 1200px);
     height: calc(100vh - 90px);
     -webkit-box-shadow: 0px 14px 13px -4px rgba(0,0,0,0.26);
     -moz-box-shadow: 0px 14px 13px -4px rgba(0,0,0,0.26);
@@ -112,28 +117,16 @@
     cursor: pointer;
 }
 
+.EventPage-headerDetails {
+    margin-left: 120px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
 
-
-@media screen and (max-width: 1170px) {
-    .EventPage-container {
-        flex-direction: column;
-    }
-    .EventPage-results {
-        width: 100%;
-        order: 3;
-    }
-    .EventPage-resultsItem {
-        padding: 10px 40px;
-    }
-    .EventPage-venueMap {
-        width: auto;
-        order: 1;
-        margin: auto;
-        margin-top: -70px;
-    }
-    .EventPage-filter {
-        width: 100%;
-        order: 2;
-        height: 350px;
-    }
+.EventPage-headerDetails img {
+    width: 65px;
+    height: 65px;
+    border-radius: 5px;
+    object-fit: cover;
 }
