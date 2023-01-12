@@ -9,6 +9,8 @@ import { ReactComponent as Section201 } from '../assets/sectionImages/section-20
 import { ReactComponent as Section202 } from '../assets/sectionImages/section-202.svg';
 import { ReactComponent as Section203 } from '../assets/sectionImages/section-203.svg';
 import { ReactComponent as Section204 } from '../assets/sectionImages/section-204.svg';
+import { ReactComponent as Section303 } from '../assets/sectionImages/section-303.svg';
+import { ReactComponent as Section304 } from '../assets/sectionImages/section-304.svg';
 import './venue.css';
 
 export const Venue = ({ venueName, ...props }) => {
@@ -25,6 +27,8 @@ export const Venue = ({ venueName, ...props }) => {
                 <VenueSection available={true} selected={false} label="202" sectionClassName="Section202"><Section202/></VenueSection>
                 <VenueSection available={true} selected={false} label="203" sectionClassName="Section203"><Section203/></VenueSection>
                 <VenueSection available={true} selected={false} label="204" sectionClassName="Section204"><Section204/></VenueSection>
+                <VenueSection available={true} selected={false} label="303" sectionClassName="Section303"><Section303/></VenueSection>
+                <VenueSection available={true} selected={false} label="304" sectionClassName="Section304"><Section304/></VenueSection>
             </svg>
         </div>
     );
