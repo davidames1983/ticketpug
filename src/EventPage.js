@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import Venue from './stories/Venue/Venue';
 import EVENTS from './data.js';
+import './EventPage.css';
 
 function EventPage() {
     const { id } = useParams();

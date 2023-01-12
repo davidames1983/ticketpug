@@ -1,9 +1,9 @@
-.Venue .Venue-OuterContainer {
+.Venue {
     position: relative;
 }
 
 .Venue .Venue-Wrapper {
-    width: 97vw;
+    width: 45vw;
     height: 90vh;
 }
 
@@ -15,4 +15,56 @@
 
 .Venue .SectionBoxes img {
     width: 124px;
+}
+
+.Venue .Venue-controls {
+    position: fixed;
+    width: 100%;
+}
+
+.Venue .Venue-zoomBtns {
+    z-index: 999;
+    position: absolute;
+    left: 0;
+}
+
+.Venue .Venue-panBtns {
+    z-index: 999;
+    left: 100px;
+    position: absolute;
+}
+
+.Venue .Venue-resetBtn {
+    z-index: 999;
+    left: 420px;
+    position: absolute;
+}
+
+.Venue button.Venue-btn {
+    font-size: 16px;
+    font-weight: 200;
+    border: 1px solid #27292c;
+    border-radius: 10px;
+    background-color: #fff;
+    color: #27292c;
+    padding: 10px;
+    margin-left: 7px;
+}
+
+.Venue .Venue-resetBtn button.Venue-btn {
+    border-radius: 50%;
+    border: 1px solid #b1b1b1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Venue .Venue-resetBtn button.Venue-btn img {
+    width: 40px;
+}
+
+.Venue button.Venue-btn:hover {
+    cursor: pointer;
+    background-color: #e7e7e7;
 }

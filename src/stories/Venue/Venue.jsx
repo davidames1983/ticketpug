@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { VenueSection } from '../VenueSection/VenueSection';
 import { ReactComponent as Section1 } from '../assets/sectionImages/section-1.svg';
@@ -20,15 +20,75 @@ import { ReactComponent as Stage } from '../assets/sectionImages/stage.svg';
 import { ReactComponent as StageBG } from '../assets/sectionImages/stageBG.svg';
 import { ReactComponent as GARight } from '../assets/sectionImages/general-admission-right.svg';
 import { ReactComponent as GALeft } from '../assets/sectionImages/general-admission-left.svg';
+import Reset from '../assets/reset.svg';
 import './venue.css';
 
 export const Venue = ({ venueName, ...props }) => {
+    const [isReset, setIsReset] = useState(true);
+
+    const venueSVG = useRef(null);
+
+    const zoom = (direction) => {
+        const svg = venueSVG.current;
+        const { scale, x, y } = getTransformParameters(svg);
+        let dScale = 0.1;
+        if (direction == "out") dScale *= -1;
+        if (scale == 0.1 && direction == "out") dScale = 0;
+        svg.style.transform = getTransformString(scale + dScale, x, y);
+        setIsReset(false);
+    };
+
+    const getTransformParameters = (element) => {
+        const transform = element.style.transform;
+        let scale = 1,
+            x = 0,
+            y = 0;
+        if (transform.includes("scale"))
+            scale = parseFloat(transform.slice(transform.indexOf("scale") + 6));
+        if (transform.includes("translateX"))
+            x = parseInt(transform.slice(transform.indexOf("translateX") + 11));
+        if (transform.includes("translateY"))
+            y = parseInt(transform.slice(transform.indexOf("translateY") + 11));
+        return { scale, x, y };
+    };
+
+    const pan = (direction) => {
+        const svg = venueSVG.current;
+        const { scale, x, y } = getTransformParameters(svg);
+        let dx = 0,
+            dy = 0;
+        switch (direction) {
+            case "left":
+            dx = -3;
+            break;
+            case "right":
+            dx = 3;
+            break;
+            case "up":
+            dy = -3;
+            break;
+            case "down":
+            dy = 3;
+            break;
+        }
+        svg.style.transform = getTransformString(scale, x + dx, y + dy);
+        setIsReset(false);
+    };
+
+    const getTransformString = (scale, x, y) =>
+        "scale(" + scale + ") " + "translateX(" + x + "%) translateY(" + y + "%)";
+
+    const reset = () => {
+        const svg = venueSVG.current;
+        svg.style.transform = getTransformString(1, 0, 0);
+        setIsReset(true);
+    }
 
     return (
         <div className="Venue"> 
             <h3>{props.venueName}</h3>
             <div className="Venue-OuterContainer">
-                <svg className="Venue-Wrapper" viewBox="0 0 2000 4000">
+                <svg ref={venueSVG} className="Venue-Wrapper" viewBox="0 0 2000 4000">
                     <VenueSection available={true} selected={false} label="1" sectionClassName="Section1"><Section1/></VenueSection>
                     <VenueSection available={false} selected={false} label="2" sectionClassName="Section2"><Section2/></VenueSection>
                     <VenueSection available={true} selected={false} label="3" sectionClassName="Section3"><Section3/></VenueSection>
@@ -49,6 +109,22 @@ export const Venue = ({ venueName, ...props }) => {
                     <VenueSection clickable={false} label="" sectionClassName="SectionStageBG"><StageBG/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionStage"><Stage/></VenueSection>
                 </svg>
+            </div>
+
+            <div className="Venue-controls">
+                <div className="Venue-zoomBtns">
+                    <button className="Venue-btn" onClick={() => zoom("in")}>+</button>
+                    <button className="Venue-btn" onClick={() => zoom("out")}>-</button>
+                </div>
+                <div className="Venue-panBtns">
+                    <button className="Venue-btn" onClick={() => pan("left")}>pan left</button>
+                    <button className="Venue-btn" onClick={() => pan("right")}>pan right</button>
+                </div>
+                {!isReset && <div className="Venue-resetBtn">
+                    <button className="Venue-btn" onClick={() => reset()}>
+                        <img src={Reset} />
+                    </button>
+                </div>}
             </div>
         </div>
     );

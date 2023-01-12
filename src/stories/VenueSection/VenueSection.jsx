@@ -22,12 +22,12 @@ export const VenueSection = ({
 
     return (
         <g 
-            stroke-width="42"
+            strokeWidth="42"
             onClick={(clickable && available) ? handleSelectClick : null}
             className={`VenueSection ${sectionClassName} ${available ? '' : 'VenueSection--disabled'} ${isSelected ? 'VenueSection--selected' : ''}`}
         >
             {props.children}
-            <text stroke-width="8" font-size={labelSize} x={labelX} y={labelY}>{label}</text>
+            <text strokeWidth="8" fontSize={labelSize} x={labelX} y={labelY}>{label}</text>
         </g>
     );
 };
