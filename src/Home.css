@@ -8,6 +8,22 @@
     margin-top: 15px;
 }
 
+.Home-cartIcon {
+    width: 30px;
+}
+
+.Home-cartIcon--hasItems {
+
+}
+
+.Home-eventImg {
+    float: left;
+    width:  100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
 .Home-logoTextBG {
     background: #4978a6;
     transform: perspective(20px) rotateX(-1deg) rotateY(-3deg);
@@ -35,10 +51,11 @@
     flex-direction: row;
     align-items: center;
     font-size: calc(10px + 2vmin);
-    width: 100%;
-    padding: 15px;
+    width: calc(100% - 200px);
+    justify-content: space-between;
+    padding: 100px;
+    padding-bottom: 0;
     padding-top: 30px;
-    padding-left: 30px;
     background: transparent;
 }
 
@@ -52,7 +69,7 @@
 }
 
 .Home-nav {
-    margin-left: 50px;
+    margin-left: 75px;
 }
 
 .Home-logoTitleWrapper {
