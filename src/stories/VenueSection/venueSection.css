@@ -18,7 +18,7 @@ g.VenueSection.Section2 text {
 
 
 g.VenueSection {
-    fill: #daccec;
+    fill: #dbd5ed;
     stroke: #9881db;
     z-index: 9999;
 }
@@ -29,18 +29,18 @@ g.VenueSection.VenueSection--disabled {
 }
 
 g.VenueSection.VenueSection--selected {
-    fill: #d8f7f6;
+    fill: #e6f4f3;
     stroke: #777777;
 }
 
 g.VenueSection:hover {
-    fill: #d8f7f6;
-    stroke: #69cee1;
+    fill: #e6f4f3;
+    stroke: #3d9cae;
     cursor: pointer;
 }
 
 g.VenueSection.VenueSection--selected:hover {
-    fill: #d8f7f6;
+    fill: #e6f4f3;
     stroke: #777777;
     cursor: pointer;
 }
