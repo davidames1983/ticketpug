@@ -14,9 +14,6 @@ export const Venue = ({ venueName, ...props }) => {
                 <VenueSection
                     available={true}
                     selected={false}
-                    labelX={280}
-                    labelY={-700}
-                    labelSize={300}
                     label="1"
                     sectionClassName="Section1"
                 >
@@ -25,9 +22,6 @@ export const Venue = ({ venueName, ...props }) => {
                 <VenueSection
                     available={true}
                     selected={false}
-                    labelX={280}
-                    labelY={-700}
-                    labelSize={300}
                     label="2"
                     sectionClassName="Section2"
                 >

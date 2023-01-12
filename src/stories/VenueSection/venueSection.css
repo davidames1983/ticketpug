@@ -1,17 +1,17 @@
 
 /* section specific classes */
 g.VenueSection.Section1 {
-    transform: scale(.1, -.1) translate(0px, -9500px);
+    transform: scale(.07, -.07) translate(-1000px, -42800px);
 }
 g.VenueSection.Section1 text {
-    transform: scale(5, -5) translate(625px, 200px);
+    transform: scale(9, -9) translate(435px, -435px);
 }
 
 g.VenueSection.Section2 {
-    transform: scale(.06, -.06) translate(11000px, -16200px);
+    transform: scale(.042, -.042) translate(9300px, -71670px);
 }
 g.VenueSection.Section2 text {
-    transform: scale(8, -8) translate(370px, 100px);
+    transform: scale(16, -16) translate(280px, -440px);
 }
 /* end section specific classes */
 
