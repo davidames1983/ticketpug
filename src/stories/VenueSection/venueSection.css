@@ -1,40 +1,74 @@
-.VenueSection svg {
-    width: 300px;
-    height: 258px;
-    position: relative;
-    z-index: 99;
+
+/* section specific classes */
+g.VenueSection.Section1 {
+    transform: scale(.1, -.1) translate(0px, -9500px);
+}
+g.VenueSection.Section1 text {
+    transform: scale(5, -5) translate(625px, 200px);
 }
 
-.VenueSection svg g {
-    fill: #df80ff;
+g.VenueSection.Section2 {
+    transform: scale(.06, -.06) translate(11000px, -16200px);
+}
+g.VenueSection.Section2 text {
+    transform: scale(8, -8) translate(370px, 100px);
+}
+/* end section specific classes */
+
+
+
+g.VenueSection {
+    fill: #daccec;
     stroke: #9881db;
-    fill-opacity: 0.2;
+    z-index: 9999;
 }
 
-.VenueSection.VenueSection--disabled svg g {
+g.VenueSection.VenueSection--disabled {
     fill: #ffffff;
     stroke: #707070;
 }
 
-.VenueSection.VenueSection--selected svg g {
-    fill: #2ffff8;
+g.VenueSection.VenueSection--selected {
+    fill: #d8f7f6;
     stroke: #777777;
 }
 
-.VenueSection svg g:hover {
-    fill: #2ffff8;
+g.VenueSection:hover {
+    fill: #d8f7f6;
     stroke: #69cee1;
     cursor: pointer;
 }
 
-.VenueSection.VenueSection--disabled svg g:hover {
+g.VenueSection.VenueSection--selected:hover {
+    fill: #d8f7f6;
+    stroke: #777777;
+    cursor: pointer;
+}
+
+g.VenueSection.VenueSection--disabled:hover {
     fill: #ffffff;
     stroke: #707070;
 }
 
-.VenueSection-label {
-    position: absolute;
+g.VenueSection text {
     font-family: 'Helvetica';
-    font-size: 33px;
-    z-index: 9;
+    fill: #000;
+    stroke: #2e2e2e;
+}
+
+g.VenueSection:hover text {
+    fill: #000;
+    stroke: #2e2e2e;
+    cursor: pointer;
+}
+
+g.VenueSection.VenueSection--selected:hover text {
+    fill: #000;
+    stroke: #2e2e2e;
+    cursor: pointer;
+}
+
+g.VenueSection.VenueSection--disabled:hover text {
+    fill: #000;
+    stroke: #2e2e2e;
 }

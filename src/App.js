@@ -1,25 +1,16 @@
 import React from 'react';
-import logo from './logo.png';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from './Home';
+import EventPage from './EventPage';
 
 function App() {
   return (
-    <div className="App">
-      <div className="App-message">
-        Find great pug-related events (only in NY at the moment)
-      </div>
-      <header className="App-header">
-        <div className="App-logoWrapper">
-          <img src={logo} className="App-logo" alt="logo" />
-          <div className="App-title">
-            TicketPug
-          </div>
-        </div>
-        <div className="App-nav">
-
-        </div>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route exact path="/event/:id" element={<EventPage />}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
