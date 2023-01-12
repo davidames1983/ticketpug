@@ -56,6 +56,20 @@ g.VenueSection.Section204 text {
     transform: scale(1.4, 1.4) translate(260px, 410px);
 }
 
+g.VenueSection.Section301 {
+    transform: scale(.48, .48) translate(-1420px, 3800px);
+}
+g.VenueSection.Section301 text {
+    transform: scale(1.5, 1.5) translate(235px, 330px);
+}
+
+g.VenueSection.Section302 {
+    transform: scale(.5, 0.5) translate(-890px, 3270px);
+}
+g.VenueSection.Section302 text {
+    transform: scale(1.5, 1.5) translate(235px, 330px);
+}
+
 g.VenueSection.Section303 {
     transform: scale(.45, .45) translate(510px, 2800px);
 }
@@ -69,6 +83,56 @@ g.VenueSection.Section304 {
 g.VenueSection.Section304 text {
     transform: scale(1.6, 1.6) translate(250px, 530px);
 }
+
+g.VenueSection.Section305 {
+    transform: scale(.52, 0.52) translate(2650px, 3080px);
+}
+g.VenueSection.Section305 text {
+    transform: scale(1.5, 1.5) translate(235px, 330px);
+}
+
+g.VenueSection.Section306 {
+    transform: scale(.5, .5) translate(3300px, 3600px);
+}
+g.VenueSection.Section306 text {
+    transform: scale(1.5, 1.5) translate(235px, 330px);
+}
+
+g.VenueSection.SectionMix {
+    transform: scale(.45, .45) translate(1120px, 4570px);
+}
+g.VenueSection.SectionMix:hover, g.VenueSection.SectionMix:hover text {
+    cursor: inherit !important;
+}
+g.VenueSection.SectionMix text {
+    transform: scale(1.6, 1.6) translate(250px, 530px);
+}
+
+g.VenueSection.SectionStage {
+    transform: scale(.45, .45) translate(1120px, 6700px);
+}
+g.VenueSection.SectionStage:hover, g.VenueSection.SectionMix:hover text {
+    cursor: inherit !important;
+}
+g.VenueSection.SectionStage text {
+    transform: scale(1.6, 1.6) translate(250px, 530px);
+}
+
+g.VenueSection.GARight {
+    transform: scale(.63, .63) translate(-870px, 3950px);
+}
+g.VenueSection.GARight text {
+    transform: scale(.73, .73) translate(200px, -40px) rotate(44deg);
+}
+
+g.VenueSection.GALeft {
+    transform: scale(.63, .63) translate(2436px, 3948px);
+}
+g.VenueSection.GALeft text {
+    transform: scale(.73, .73) translate(170px, 800px) rotate(-44deg);
+}
+
+
 /* end section specific classes */
 
 

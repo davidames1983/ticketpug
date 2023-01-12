@@ -1,4 +1,18 @@
+.Venue .Venue-OuterContainer {
+    position: relative;
+}
+
 .Venue .Venue-Wrapper {
     width: 97vw;
     height: 90vh;
+}
+
+.Venue .SectionBoxes {
+    position: absolute;
+    top: 288px;
+    left: 194px;
+}
+
+.Venue .SectionBoxes img {
+    width: 124px;
 }

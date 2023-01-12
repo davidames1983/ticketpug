@@ -9,6 +9,7 @@ export const VenueSection = ({
         labelX,
         labelY,
         label,
+        clickable,
         labelSize,
         sectionClassName,
         ...props
@@ -22,7 +23,7 @@ export const VenueSection = ({
     return (
         <g 
             stroke-width="42"
-            onClick={handleSelectClick}
+            onClick={clickable ? handleSelectClick : null}
             className={`VenueSection ${sectionClassName} ${available ? '' : 'VenueSection--disabled'} ${isSelected ? 'VenueSection--selected' : ''}`}
         >
             {props.children}
@@ -37,6 +38,7 @@ VenueSection.propTypes = {
     sectionClassName: PropTypes.string,
     label: PropTypes.string,
     rotateLabel: PropTypes.bool,
+    clickable: PropTypes.bool,
     labelX: PropTypes.number,
     labelY: PropTypes.number,
     labelSize: PropTypes.number,
@@ -49,6 +51,7 @@ VenueSection.defaultProps = {
     sectionClassName: "Section1",
     selected: false,
     label: "1",
+    clickable: true,
     rotateLabel: false,
     labelX: 50,
     labelY: 50,
