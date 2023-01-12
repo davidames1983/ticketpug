@@ -16,7 +16,9 @@ import { ReactComponent as Section304 } from '../assets/sectionImages/section-30
 import { ReactComponent as Section305 } from '../assets/sectionImages/section-305.svg';
 import { ReactComponent as Section306 } from '../assets/sectionImages/section-306.svg';
 import { ReactComponent as Mix } from '../assets/sectionImages/mix.svg';
+import { ReactComponent as MixBG } from '../assets/sectionImages/rect-bg.svg';
 import { ReactComponent as Stage } from '../assets/sectionImages/stage.svg';
+import { ReactComponent as StageBG } from '../assets/sectionImages/stageBG.svg';
 import { ReactComponent as GARight } from '../assets/sectionImages/general-admission-right.svg';
 import { ReactComponent as GALeft } from '../assets/sectionImages/general-admission-left.svg';
 import './venue.css';
@@ -44,7 +46,9 @@ export const Venue = ({ venueName, ...props }) => {
                     <VenueSection available={true} selected={false} label="306" sectionClassName="Section306"><Section306/></VenueSection>
                     <VenueSection available={true} selected={false} label="General Admission Right" sectionClassName="GARight"><GARight/></VenueSection>
                     <VenueSection available={true} selected={false} label="General Admission Left" sectionClassName="GALeft"><GALeft/></VenueSection>
+                    <VenueSection clickable={false} label="" sectionClassName="SectionMixBG"><MixBG/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionMix"><Mix/></VenueSection>
+                    <VenueSection clickable={false} label="" sectionClassName="SectionStageBG"><StageBG/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionStage"><Stage/></VenueSection>
                 </svg>
             </div>
@@ -59,3 +63,5 @@ Venue.propTypes = {
 Venue.defaultProps = {
     venueName: "Default"
 };
+
+export default Venue;

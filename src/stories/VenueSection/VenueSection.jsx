@@ -23,7 +23,7 @@ export const VenueSection = ({
     return (
         <g 
             stroke-width="42"
-            onClick={clickable ? handleSelectClick : null}
+            onClick={(clickable && available) ? handleSelectClick : null}
             className={`VenueSection ${sectionClassName} ${available ? '' : 'VenueSection--disabled'} ${isSelected ? 'VenueSection--selected' : ''}`}
         >
             {props.children}

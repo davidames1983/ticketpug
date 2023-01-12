@@ -16,7 +16,11 @@ export default {
 };
 
 const Template = (args) => (
-    <VenueSection {...args}><SectionSVG/></VenueSection>
+  <svg version="1.0" xmlns="http://www.w3.org/2000/svg" width="900.000000pt" height="864.000000pt" viewBox="0 0 900.000000 864.000000" preserveAspectRatio="xMidYMid meet">
+    <VenueSection {...args}>
+      <SectionSVG/>
+    </VenueSection>
+  </svg>
 );
 
 export const Main = Template.bind({});

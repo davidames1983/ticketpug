@@ -1,5 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
+import Venue from './stories/Venue/Venue';
 import EVENTS from './data.js';
 
 function EventPage() {
@@ -13,7 +14,16 @@ function EventPage() {
     }
 
     return (
-        <div>Event: {event.name}</div>
+        <div className="EventPage">
+            <div className="EventPage-header">Event: {event.name}</div>
+            <div className="EventPage-container">
+                <div className="EventPage-results"></div>
+                <div className="EventPage-venueMap">
+                    <Venue />
+                </div>
+                <div className="EventPage-filter"></div>
+            </div>
+        </div>
     );
 }
 

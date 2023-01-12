@@ -108,6 +108,16 @@ g.VenueSection.SectionMix text {
     transform: scale(1.6, 1.6) translate(250px, 530px);
 }
 
+g.VenueSection.SectionMixBG {
+    transform: scale(.425, .425) translate(1200px, 4900px);
+}
+g.VenueSection.SectionMixBG:hover, g.VenueSection.SectionMixBG:hover text {
+    cursor: inherit !important;
+}
+g.VenueSection.SectionMixBG text {
+    transform: scale(1.6, 1.6) translate(250px, 530px);
+}
+
 g.VenueSection.SectionStage {
     transform: scale(.45, .45) translate(1120px, 6700px);
 }
@@ -115,6 +125,16 @@ g.VenueSection.SectionStage:hover, g.VenueSection.SectionMix:hover text {
     cursor: inherit !important;
 }
 g.VenueSection.SectionStage text {
+    transform: scale(1.6, 1.6) translate(250px, 530px);
+}
+
+g.VenueSection.SectionStageBG {
+    transform: scale(.51, .51) translate(920px, 5870px);
+}
+g.VenueSection.SectionStageBG:hover, g.VenueSection.SectionMixBG:hover text {
+    cursor: inherit !important;
+}
+g.VenueSection.SectionStageBG text {
     transform: scale(1.6, 1.6) translate(250px, 530px);
 }
 
@@ -131,8 +151,6 @@ g.VenueSection.GALeft {
 g.VenueSection.GALeft text {
     transform: scale(.73, .73) translate(170px, 800px) rotate(-44deg);
 }
-
-
 /* end section specific classes */
 
 
@@ -168,6 +186,7 @@ g.VenueSection.VenueSection--selected:hover {
 g.VenueSection.VenueSection--disabled:hover {
     fill: #ffffff;
     stroke: #707070;
+    cursor: inherit;
 }
 
 g.VenueSection text {
@@ -191,4 +210,5 @@ g.VenueSection.VenueSection--selected:hover text {
 g.VenueSection.VenueSection--disabled:hover text {
     fill: #000;
     stroke: #2e2e2e;
+    cursor: default;
 }
