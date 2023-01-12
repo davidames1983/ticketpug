@@ -41,6 +41,20 @@ g.VenueSection.Section202 {
 g.VenueSection.Section202 text {
     transform: scale(1.6, 1.6) translate(290px, 600px);
 }
+
+g.VenueSection.Section203 {
+    transform: scale(.47, .47) translate(2480px, 3900px);
+}
+g.VenueSection.Section203 text {
+    transform: scale(1.5, 1.5) translate(210px, 680px);
+}
+
+g.VenueSection.Section204 {
+    transform: scale(.51, .51) translate(2730px, 4320px);
+}
+g.VenueSection.Section204 text {
+    transform: scale(1.4, 1.4) translate(260px, 410px);
+}
 /* end section specific classes */
 
 
