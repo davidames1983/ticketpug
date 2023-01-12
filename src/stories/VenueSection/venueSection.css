@@ -108,16 +108,6 @@ g.VenueSection.SectionMix text {
     transform: scale(1.6, 1.6) translate(250px, 530px);
 }
 
-g.VenueSection.SectionMixBG {
-    transform: scale(.425, .425) translate(1200px, 4900px);
-}
-g.VenueSection.SectionMixBG:hover, g.VenueSection.SectionMixBG:hover text {
-    cursor: inherit !important;
-}
-g.VenueSection.SectionMixBG text {
-    transform: scale(1.6, 1.6) translate(250px, 530px);
-}
-
 g.VenueSection.SectionStage {
     transform: scale(.45, .45) translate(1120px, 6700px);
 }
