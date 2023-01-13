@@ -18,10 +18,12 @@ const filterByPriceRange = (priceRangeMin, priceRangeMax, tickets) => {
 }
 
 const filterBySections = (sections, tickets) => {
-    return tickets.filter((ticket) => sections.includes(ticket.section))
+    if (sections.length === 0) { return tickets };
+    return tickets.filter((ticket) => sections.includes(ticket.section));
 }
 
-const filterByNumOfTickets= (numOfTickets, tickets) => {
+const filterByNumOfTickets = (numOfTickets, tickets) => {
+    if (numOfTickets === 'any') { return tickets };
     return tickets.filter((ticket) => tickets.filter((t) => t.section === ticket.section).length >= numOfTickets)
 }
 
@@ -49,9 +51,18 @@ function EventPage() {
         setFilteredTickets(event.tickets);
     },[])
 
-    const updateSectionsAvailable = (tickets) => {
-        const sectionsUnavailable = ALL_SECTIONS.filter(s => ![... new Set(tickets.map(t => t.section))].includes(s));
-        setSectionsNotAvailable(sectionsUnavailable);
+    // const updateSectionsAvailable = (tickets) => {
+    //     const sectionsUnavailable = ALL_SECTIONS.filter(s => ![... new Set(tickets.map(t => t.section))].includes(s));
+    //     setSectionsNotAvailable(sectionsUnavailable);
+    // }
+
+    useEffect(() => {
+        filterTickets();
+    }, [selectedSections, minPrice, maxPrice, numOfTickets])
+
+    const filterTickets = () => {
+        let newFilteredTickets = filterByPriceRange(minPrice, maxPrice, filterByNumOfTickets(numOfTickets, filterBySections(selectedSections, event.tickets)));
+        setFilteredTickets(newFilteredTickets);
     }
 
     const handlePriceRangeChange = (priceRange) => {
@@ -60,11 +71,11 @@ function EventPage() {
         setMaxPrice(max);
     }
 
-    const handleSectionSelectionChange = (section, removing) => {
+    const handleSectionSelectionChange = async (section, removing) => {
         if (!removing) {
             setSelectedSections(oldArray => [...oldArray, section])
         } else {
-            setSelectedSections(selectedSections.filter(selection => selection !== section));
+            setSelectedSections(oldArray => oldArray.filter(s => s !== section));
         }
     }
 
@@ -133,6 +144,11 @@ function EventPage() {
                             </div>
                         </div>
                     ))}
+                    {filteredTickets.length === 0 && (
+                        <div style={{ display: "flex", justifyContent: "center", marginTop: "40px" }}>
+                            <h4 style={{ fontSize: "20px", fontWeight: 400 }}>No results found.</h4>
+                        </div>
+                    )}
                 </div>
                 <div className="EventPage-venueMap">
                     <Venue disabledSections={sectionsNotAvailable} changeHandler={handleSectionSelectionChange} />
@@ -150,10 +166,10 @@ function EventPage() {
                         <div className="EventPage-filterItemLabel">Price</div>
                         <Slider
                             range
-                            defaultValue={[80, 500]}
+                            defaultValue={[50, 100]}
                             min={0}
                             onChange={handlePriceRangeChange}
-                            max={5000}
+                            max={175}
                             tooltip={{
                                 formatter: (val) => `$${val.toLocaleString()}`
                             }}
