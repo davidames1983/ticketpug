@@ -66,7 +66,7 @@ function EventPage() {
     }, [selectedSections, minPrice, maxPrice, numOfTickets])
 
     const filterTickets = () => {
-        let newFilteredTickets = filterByPriceRange(minPrice, maxPrice, filterByNumOfTickets(numOfTickets, filterBySections(selectedSections, event.tickets)));
+        let newFilteredTickets = filterByNumOfTickets(numOfTickets, filterByPriceRange(minPrice, maxPrice, filterBySections(selectedSections, event.tickets)));
         setFilteredTickets(newFilteredTickets);
     }
 
