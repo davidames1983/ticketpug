@@ -18,6 +18,7 @@ export const VenueSection = ({
     
     const handleSelectClick = () => {
         setIsSelected(!isSelected);
+        props.handleSectionSelectionChange(label, isSelected);
     }
 
     return (
