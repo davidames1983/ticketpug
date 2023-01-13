@@ -36,7 +36,7 @@ function EventPage() {
     const image = IMAGES[index];
 
     const [minPrice, setMinPrice] = useState(0);
-    const [maxPrice, setMaxPrice] = useState(500);
+    const [maxPrice, setMaxPrice] = useState(125);
     const [selectedSections, setSelectedSections] = useState([]);
     const [sectionsNotAvailable, setSectionsNotAvailable] = useState([]);
     const [numOfTickets, setNumOfTickets] = useState('any');
@@ -174,7 +174,7 @@ function EventPage() {
                         <div className="EventPage-filterItemLabel">Price</div>
                         <Slider
                             range
-                            defaultValue={[50, 100]}
+                            defaultValue={[minPrice, maxPrice]}
                             min={0}
                             onChange={handlePriceRangeChange}
                             max={175}
