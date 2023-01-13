@@ -89,22 +89,22 @@ export const Venue = ({ venueName, ...props }) => {
             <h3>{props.venueName}</h3>
             <div className="Venue-OuterContainer">
                 <svg ref={venueSVG} className="Venue-Wrapper" viewBox="0 0 2000 4000">
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="1" sectionClassName="Section1"><Section1/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={false} selected={false} label="2" sectionClassName="Section2"><Section2/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="3" sectionClassName="Section3"><Section3/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="4" sectionClassName="Section4"><Section4/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="201" sectionClassName="Section201"><Section201/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="202" sectionClassName="Section202"><Section202/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="203" sectionClassName="Section203"><Section203/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="204" sectionClassName="Section204"><Section204/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="301" sectionClassName="Section301"><Section301/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="302" sectionClassName="Section302"><Section302/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="303" sectionClassName="Section303"><Section303/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="304" sectionClassName="Section304"><Section304/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="305" sectionClassName="Section305"><Section305/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="306" sectionClassName="Section306"><Section306/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="General Admission Right" sectionClassName="GARight"><GARight/></VenueSection>
-                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={true} selected={false} label="General Admission Left" sectionClassName="GALeft"><GALeft/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("1")} selected={false} label="1" sectionClassName="Section1"><Section1/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("2")} selected={false} label="2" sectionClassName="Section2"><Section2/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("3")} selected={false} label="3" sectionClassName="Section3"><Section3/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("4")} selected={false} label="4" sectionClassName="Section4"><Section4/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("201")} selected={false} label="201" sectionClassName="Section201"><Section201/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("202")} selected={false} label="202" sectionClassName="Section202"><Section202/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("203")} selected={false} label="203" sectionClassName="Section203"><Section203/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("204")} selected={false} label="204" sectionClassName="Section204"><Section204/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("301")} selected={false} label="301" sectionClassName="Section301"><Section301/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("302")} selected={false} label="302" sectionClassName="Section302"><Section302/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("303")} selected={false} label="303" sectionClassName="Section303"><Section303/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("304")} selected={false} label="304" sectionClassName="Section304"><Section304/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("305")} selected={false} label="305" sectionClassName="Section305"><Section305/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("306")} selected={false} label="306" sectionClassName="Section306"><Section306/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("General Admission Right")} selected={false} label="General Admission Right" sectionClassName="GARight"><GARight/></VenueSection>
+                    <VenueSection handleSectionSelectionChange={props.changeHandler} available={!props.disabledSections.includes("General Admission Left")} selected={false} label="General Admission Left" sectionClassName="GALeft"><GALeft/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionMix"><Mix/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionStageBG"><StageBG/></VenueSection>
                     <VenueSection clickable={false} label="" sectionClassName="SectionStage"><Stage/></VenueSection>

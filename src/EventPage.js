@@ -14,6 +14,7 @@ import './EventPage.css';
 const IMAGES = [race, song, olypics];
 
 const filterByPriceRange = (priceRangeMin, priceRangeMax, tickets) => {
+    if (!tickets) { return [] }
     return tickets.filter((ticket) => ticket.price >= priceRangeMin && ticket.price <= priceRangeMax)
 }
 
@@ -23,6 +24,7 @@ const filterBySections = (sections, tickets) => {
 }
 
 const filterByNumOfTickets = (numOfTickets, tickets) => {
+    if (!tickets) { return [] }
     if (numOfTickets === 'any') { return tickets };
     return tickets.filter((ticket) => tickets.filter((t) => t.section === ticket.section).length >= numOfTickets)
 }
@@ -32,10 +34,6 @@ function EventPage() {
     const index = id - 1;
     const event = EVENTS[index];
     const image = IMAGES[index];
-
-    let date = new Date(event.date);
-    const eventDate = date.toDateString();
-    const ALL_SECTIONS = [... new Set(event.tickets.map(t => t.section))];
 
     const [minPrice, setMinPrice] = useState(0);
     const [maxPrice, setMaxPrice] = useState(500);
@@ -47,14 +45,21 @@ function EventPage() {
     const [cartItems, setCartItems] = useState(0);
     const [cartOpen, setCartOpen] = useState(false);
 
+    const ALL_SECTIONS = ['General Admission Left', 'General Admission Right', '1', '2', '3', '4', '201', '202', '203', '204', '301', '302', '303', '304', '305', '306']
+
+
     useEffect(() => {
         setFilteredTickets(event.tickets);
     },[])
 
-    // const updateSectionsAvailable = (tickets) => {
-    //     const sectionsUnavailable = ALL_SECTIONS.filter(s => ![... new Set(tickets.map(t => t.section))].includes(s));
-    //     setSectionsNotAvailable(sectionsUnavailable);
-    // }
+    useEffect(() => {
+        updateSectionsAvailable(filteredTickets);
+    },[filteredTickets])
+
+    const updateSectionsAvailable = (tickets) => {
+        const sectionsUnavailable = ALL_SECTIONS.filter(s => ![... new Set(tickets.map(t => t.section))].includes(s));
+        setSectionsNotAvailable(sectionsUnavailable);
+    }
 
     useEffect(() => {
         filterTickets();
@@ -88,6 +93,9 @@ function EventPage() {
             <div>No event found with that ID.</div>
         );
     }
+
+    let date = new Date(event.date);
+    const eventDate = date.toDateString();
 
     return (
         <div className="EventPage">
@@ -182,11 +190,11 @@ function EventPage() {
                     <div className="EventPage-filterItem">
                         <div className="EventPage-filterItemLabel">Number of Tickets</div>
                         <div className="EventPage-numOfTickets">
-                            <button onClick={() => handleNumOfTicketsChange("any")}>any</button>
-                            <button onClick={() => handleNumOfTicketsChange(1)}>1</button>
-                            <button onClick={() => handleNumOfTicketsChange(2)}>2</button>
-                            <button onClick={() => handleNumOfTicketsChange(3)}>3</button>
-                            <button onClick={() => handleNumOfTicketsChange(4)}>4+</button>
+                            <button className={`${numOfTickets === 'any' ? 'selected' : ''}`} onClick={() => handleNumOfTicketsChange("any")}>any</button>
+                            <button className={`${numOfTickets === 1 ? 'selected' : ''}`} onClick={() => handleNumOfTicketsChange(1)}>1</button>
+                            <button className={`${numOfTickets === 2 ? 'selected' : ''}`} onClick={() => handleNumOfTicketsChange(2)}>2</button>
+                            <button className={`${numOfTickets === 3 ? 'selected' : ''}`} onClick={() => handleNumOfTicketsChange(3)}>3</button>
+                            <button className={`${numOfTickets === 4 ? 'selected' : ''}`} onClick={() => handleNumOfTicketsChange(4)}>4</button>
                         </div>
                     </div>
                 </div>

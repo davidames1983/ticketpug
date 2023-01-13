@@ -132,6 +132,12 @@ button.addToCartBtn:hover {
     margin-left: 7px;
 }
 
+.EventPage-numOfTickets button.selected,
+.EventPage-numOfTickets button.selected:hover {
+    background-color: #0384e7;
+    color: #fff;
+}
+
 .EventPage-numOfTickets button:hover {
     background-color: #efefef;
     cursor: pointer;
